@@ -52,8 +52,8 @@ const metaImagen = `${SITE}/public/portfolio-web.jpg`;
   }
 </style>
 <script>
-  const root = document.querySelector(":root");
   document.addEventListener("astro:after-swap", () => {
+    const root = document.querySelector(":root");
     localStorage.theme === "dark"
       ? (root.className = "dark")
       : (root.className = "light");

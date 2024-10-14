@@ -93,28 +93,21 @@ const { email } = Astro.props;
     const root = document.querySelector(":root");
     const buttonLight = document.querySelector("#light");
     const buttonDark = document.querySelector("#dark");
-    const darkModePreference = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    );
 
-    function changeScheme() {
-      if (
-        (darkModePreference.matches && root.className === "") ||
-        root.className === "dark"
-      ) {
-        root.className = "light";
-        window.localStorage.setItem("theme", "light");
-      } else {
-        root.className = "dark";
-        window.localStorage.setItem("theme", "dark");
-      }
+    function setTheme(theme) {
+      root.className = theme;
+      window.localStorage.setItem("theme", theme);
+    }
+
+    if (!localStorage.theme) {
+      setTheme("dark");
     }
 
     if (buttonLight) {
-      buttonLight.addEventListener("click", changeScheme);
+      buttonLight.addEventListener("click", () => setTheme("light"));
     }
     if (buttonDark) {
-      buttonDark.addEventListener("click", changeScheme);
+      buttonDark.addEventListener("click", () => setTheme("dark"));
     }
   });
 </script>
