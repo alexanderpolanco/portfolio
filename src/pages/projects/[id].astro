@@ -52,10 +52,13 @@ const metaImagen = `${SITE}/public/portfolio-web.jpg`;
   }
 </style>
 <script>
+  const root = document.querySelector(":root");
+
   document.addEventListener("astro:after-swap", () => {
-    const root = document.querySelector(":root");
-    localStorage.theme === "dark"
-      ? (root.className = "dark")
-      : (root.className = "light");
+    root.className = localStorage.theme;
+  });
+
+  document.addEventListener("astro:page-load", () => {
+    root.className = localStorage.theme;
   });
 </script>

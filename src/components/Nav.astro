@@ -94,13 +94,19 @@ const { email } = Astro.props;
     const buttonLight = document.querySelector("#light");
     const buttonDark = document.querySelector("#dark");
 
-    function setTheme(theme) {
+    function setTheme(theme: string) {
       root.className = theme;
       window.localStorage.setItem("theme", theme);
     }
 
+    function getCurrentTheme() {
+      return window.localStorage.getItem("theme");
+    }
+
     if (!localStorage.theme) {
       setTheme("dark");
+    } else {
+      root.className = getCurrentTheme();
     }
 
     if (buttonLight) {
