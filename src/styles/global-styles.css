@@ -1,0 +1,280 @@
+/*
+========================
+<INICIO DE ESTILOS GENERALES>
+========================
+*/
+
+@font-face {
+  font-family: "Onest";
+  src: url("/fonts/Onest-VariableFont_wght.woff") format("woff");
+  font-display: swap;
+}
+
+:root {
+  --yellow-500: rgb(224, 183, 25);
+  --blue-300: rgb(10, 56, 113);
+  --gray-100: rgb(206, 212, 218);
+  --gray-150: rgba(209 213 219 / 0.6);
+  --white-100: rgb(255, 255, 255);
+  --black-100: rgba(0, 0, 0, 0.226);
+  --gray-gray-200: rgb(200, 204, 209);
+
+  --black-gray-100: rgba(0, 0, 0, 0.75);
+  --gray-blue-100: rgb(240, 240, 240);
+  --gray-gray-120: rgb(206, 212, 218);
+  --white-gray-500: rgb(75, 85, 99);
+  --blue-gray-100: rgb(172, 218, 255);
+  --white-blue-500: rgb(10, 56, 113);
+  --gray-blue-120: rgb(10, 56, 113);
+  --background: radial-gradient(
+    farthest-corner at 50% 100px,
+    rgb(245, 245, 253),
+    rgb(254, 254, 254)
+  );
+
+  color-scheme: light dark;
+
+  #light {
+    display: none;
+  }
+  #dark {
+    display: initial;
+    color: var(--white-gray-500);
+    animation: scale-reverse 0.5s;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /***COLORES***/
+    --white-gray-500: rgb(229, 231, 235);
+    --white-blue-500: rgb(229, 231, 235);
+    --gray-blue-100: rgb(31, 41, 55);
+    --gray-gray-120: rgb(72, 82, 96);
+    --gray-blue-120: rgb(72, 82, 96);
+    --black-gray-100: rgb(89, 101, 117);
+    --blue-gray-100: rgb(31, 41, 55);
+    --gray-gray-200: rgb(31, 41, 55);
+    --background: radial-gradient(
+      farthest-corner at 50% 100px,
+      #202241,
+      #030712
+    );
+    #light {
+      display: initial;
+      color: var(--white-gray-500);
+      animation: scale-reverse 0.5s;
+    }
+    #dark {
+      display: none;
+    }
+  }
+}
+
+.dark {
+  --white-gray-500: rgb(229, 231, 235);
+  --white-blue-500: rgb(229, 231, 235);
+  --gray-blue-100: rgb(31, 41, 55);
+  --gray-gray-120: rgb(72, 82, 96);
+  --gray-blue-120: rgb(72, 82, 96);
+  --black-gray-100: rgb(89, 101, 117);
+  --blue-gray-100: rgb(31, 41, 55);
+  --gray-gray-200: rgb(31, 41, 55);
+  --background: radial-gradient(
+    farthest-corner at 50% 100px,
+    rgb(32, 34, 65),
+    rgb(3, 7, 18)
+  );
+  color-scheme: dark;
+
+  #light {
+    display: initial;
+    color: var(--white-gray-500);
+    animation: scale-reverse 0.5s;
+  }
+  #dark {
+    display: none;
+  }
+}
+
+.light {
+  /***COLORES***/
+  --white-gray-500: rgb(75, 85, 99);
+  --gray-blue-100: rgb(240, 240, 240);
+  --gray-gray-120: rgb(206, 212, 218);
+  --gray-blue-120: rgb(10, 56, 113);
+  --black-gray-100: rgba(0, 0, 0, 0.75);
+  --white-blue-500: rgb(10, 56, 113);
+  --gray-gray-200: rgb(200, 204, 209);
+  --background: radial-gradient(
+    farthest-corner at 50% 100px,
+    rgb(245, 245, 253),
+    rgb(254, 254, 254)
+  );
+  color-scheme: light;
+  #light {
+    display: none;
+  }
+  #dark {
+    display: initial;
+    color: var(--white-gray-500);
+    animation: scale-reverse 0.5s;
+  }
+}
+
+@keyframes scale-reverse {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 9px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--blue-300);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(229, 231, 235);
+  border-radius: 20px;
+  border: 1.5px solid rgb(229, 231, 235);
+}
+
+a {
+  color: var(--white-gray-500);
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+p {
+  color: var(--white-gray-500);
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+.text-yellow {
+  color: var(--yellow-500);
+}
+
+.button {
+  display: flex;
+  transition: all 0.5s;
+  align-items: center;
+  width: fit-content;
+  border-radius: 20px;
+  border: 1px solid var(--gray-gray-120);
+  padding: 4px 16px;
+  color: var(--white-gray-500);
+  background-color: var(--gray-blue-100);
+  font-size: 1rem;
+  font-family: "Onest", system-ui, sans-serif;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.contrast-button:hover {
+  background-color: var(--black-gray-100);
+  color: var(--gray-100);
+}
+
+.featured-button {
+  background-color: var(--gray-blue-100);
+  color: var(--white-blue-500);
+  border-color: var(--gray-blue-120);
+  font-size: 0.8rem;
+}
+
+.featured-button:hover {
+  transform: scale(1.05);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-family: "Onest", system-ui, sans-serif;
+}
+
+body {
+  padding: 20px;
+  background: var(--background);
+}
+
+header,
+main,
+footer {
+  max-width: 896px;
+  margin: 0 auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.container-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+.know-more {
+  display: flex;
+  text-decoration: none;
+  color: var(--yellow-500);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media (width < 750px) {
+  #experience article,
+  .group-project,
+  .container-obout {
+    flex-wrap: wrap;
+  }
+
+  .img-project {
+    padding-right: 0px;
+  }
+
+  .text-project {
+    margin: 15px 0;
+  }
+
+  .container-certifications {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .container-logo-certificartion {
+    display: flex;
+    justify-content: center;
+  }
+}

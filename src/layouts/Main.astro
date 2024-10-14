@@ -1,0 +1,42 @@
+---
+import "../styles/reset-box.css";
+import "../styles/global-styles.css";
+import { ViewTransitions } from "astro:transitions";
+
+interface Props {
+  title: string;
+  content: string;
+  description: string;
+  url: string;
+  imagen: string;
+}
+
+const { title, content, description, url, imagen } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="generator" content={Astro.generator} />
+    <meta name="content" content={content} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+    <!-- AGREGA EL ICONO DE LA PAGINA
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="./assets/favicon.png" /> -->
+    <meta name="theme-color" content="#0a3871" />
+    <meta property="og:title" content={title} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={imagen} />
+    <meta name="
+      twitter:card" content={title} />
+    <meta name="twitter:site" content="@JosemendezCL" />
+    <ViewTransitions />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

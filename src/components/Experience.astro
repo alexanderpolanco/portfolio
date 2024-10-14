@@ -1,0 +1,75 @@
+---
+interface Props {
+  cargo: string;
+  empresa: string;
+  fecha: string;
+  descripcion: string;
+}
+const { cargo, empresa, fecha, descripcion } = Astro.props;
+---
+
+<article>
+  <div class="container-activity">
+    <span class="point">•</span>
+    <div>
+      <span class="text-job">{cargo}</span>
+      <span class="text-empresa">{empresa}</span>
+      <small class="text-date-job">{fecha}</small>
+    </div>
+  </div>
+  <div class="container-description">
+    {descripcion}
+  </div>
+</article>
+<style>
+  article {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 50px;
+  }
+
+  .container-activity {
+    display: flex;
+    padding-left: 29px;
+    max-width: 300px;
+    min-width: 210px;
+    margin-right: 10px;
+  }
+
+  .point {
+    position: relative;
+    font-size: 3rem;
+    left: -22.5px;
+    top: -15px;
+    color: var(--yellow-500);
+  }
+
+  .text-job {
+    display: block;
+    color: var(--yellow-500);
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  .text-empresa {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--white-gray-500);
+    font-weight: bold;
+  }
+
+  .text-date-job {
+    display: block;
+    color: var(--white-gray-500);
+  }
+
+  .container-description {
+    max-width: 500px;
+    min-width: 300px;
+    margin-left: 45px;
+    color: var(--white-gray-500);
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+</style>

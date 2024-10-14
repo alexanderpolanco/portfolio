@@ -1,0 +1,61 @@
+---
+import Project from "../../components/Project.astro";
+import Layout from "../../layouts/Main.astro";
+import Projects from "../../layouts/Projects.astro";
+import { getCollection, render } from "astro:content";
+
+const SITE = import.meta.env.SITE;
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { id: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { titulo, imagen, metaDescripcion, resumen, linkCode, linkPreview } =
+  project.data;
+
+const { Content } = await render(project);
+
+const content = titulo;
+const url = `${SITE}/projects/${project.slug}`;
+const metaImagen = `${SITE}/public/portfolio-web.jpg`;
+---
+
+<Layout
+  title={titulo}
+  content={content}
+  description={metaDescripcion}
+  url={url}
+  imagen={metaImagen}
+>
+  <main>
+    <Projects>
+      <Project
+        slug={project.slug}
+        titulo={titulo}
+        imagen={`../images/${imagen}`}
+        resumen=""
+        linkCode={linkCode}
+        linkPreview={linkPreview}
+      >
+        <Content />
+      </Project>
+    </Projects>
+  </main></Layout
+>
+<style>
+  .text-project {
+  }
+</style>
+<script>
+  const root = document.querySelector(":root");
+  document.addEventListener("astro:after-swap", () => {
+    localStorage.theme === "dark"
+      ? (root.className = "dark")
+      : (root.className = "light");
+  });
+</script>

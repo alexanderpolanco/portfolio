@@ -1,54 +1,60 @@
-# Astro Starter Kit: Basics
+<!-- PROJECT LOGO -->
+<br />
+<div id="encabezado" align="center">
+    <img src="./public/images/foto320x489.webp" alt="Logo" width= "64px;"
+    height= "64px;" style="border-radius: 50%; background-color: white;">
 
-```sh
-npm create astro@latest -- --template basics
-```
+  <h3 align="center">Alexander</h3>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+  <p align="center">
+    Portfolio
+    <br />
+    <a href="https://alexanderpolanco.github.io/portfolio/" target="_blank"><strong>Ver »</strong></a>
+    <br />
+  </p>
+</div>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+<!-- ABOUT THE PROJECT -->
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Acerca del proyecto
 
-## 🚀 Project Structure
+[![Vista desktop][product-screenshot-desktop]](https://alexanderpolanco.github.io/portfolio/)
 
-Inside of your Astro project, you'll see the following folders and files:
+Este portfolio es una reimaginación de mi trabajo anterior, construido con el poderoso framework Astro JS. Opté por Astro debido a su enfoque en la performance, la simplicidad y la capacidad de crear sitios web estáticos altamente personalizables.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### Características Destacadas
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Performance optimizada:** Astro genera sitios web estáticos, lo que resulta en una carga rápida y una excelente experiencia de usuario.
+- **Diseño responsivo:** El diseño se adapta perfectamente a diferentes tamaños de pantalla, desde dispositivos móviles hasta pantallas grandes.
+- **Código limpio y mantenible:** Astro promueve una estructura de componentes y una sintaxis concisa, facilitando el desarrollo y la colaboración.
+- **Personalización avanzada:** Gracias a las capacidades de Astro, pude crear transiciones de vista suaves y personalizadas, mejorando la interacción del usuario.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+<p align="center">
+<a href="https://alexanderpolanco.github.io/portfolio/" target="_blank"><img src="./public/images/shots_movil_so.webp"/></a>
+</p>
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Desarrollo
 
-## 🧞 Commands
+Los recursos bases usados fueron:
 
-All commands are run from the root of the project, from a terminal:
+- [![JavaScript][JavaScript]][JavaScript-url]
+- [![HTML5][HTML5]][HTML5-url]
+- [![CSS3][CSS3]][CSS3-url]
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+<!-- LICENSE -->
 
-## 👀 Want to learn more?
+## Licencia
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Distribuido bajo licencia GPL. Ver `LICENSE.txt` para más información.
+
+<p align="right">(<a href="#encabezado">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[JavaScript]: https://img.shields.io/badge/javascript-grey?logo=javascript
+[JavaScript-url]: https://developer.mozilla.org/es/docs/Web/JavaScript
+[HTML5]: https://img.shields.io/badge/html5-blue?logo=html5
+[HTML5-url]: https://developer.mozilla.org/es/docs/Glossary/HTML5
+[CSS3]: https://img.shields.io/badge/css3-orange?logo=css3
+[CSS3-url]: https://developer.mozilla.org/es/docs/Web/CSS
+[product-screenshot-desktop]: ./public/images/shots_so.webp

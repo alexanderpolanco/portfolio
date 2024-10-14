@@ -1,0 +1,79 @@
+---
+interface Props {
+  titulo: string;
+  logo: string;
+  empresa: string;
+  expedicion: string;
+  ID: string;
+  linkCertificate: string;
+}
+
+const { titulo, logo, empresa, expedicion, ID, linkCertificate } = Astro.props;
+---
+
+<article class="container-certifications">
+  <div class="container-logo-certificartion">
+    <img
+      width="48"
+      src={logo}
+      loading="lazy"
+      height="48"
+      alt="Logotipo de Alura Latam"
+      class="border-logo-certificartion"
+    />
+  </div>
+  <div class="details-certification">
+    <span>
+      <h5 class="title-certification">
+        {titulo}
+      </h5>
+    </span>
+    <span>{empresa}</span>
+    <span>Expedición: {expedicion}</span>
+    {ID !== "" && <span>{ID}</span>}
+    <a href={linkCertificate} target="_blank" class="button contrast-button">
+      Mostrar credencial
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xml:space="preserve"
+        viewBox="0 0 64 64"
+        fill="currentColor"
+        width="14"
+        height="14"
+      >
+        <path d="M53 56H8V11h22V3H0v61h61V34h-8z"></path>
+        <path d="m42 0 8 8-17 17 6 6 17-17 8 9V0z"></path>
+      </svg>
+    </a>
+  </div>
+</article>
+<style>
+  .container-certifications {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .border-logo-certificartion {
+    border: white 2px solid;
+    border-radius: 15px;
+  }
+
+  .details-certification {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0px;
+  }
+
+  .title-certification {
+    margin: 16px 0px;
+  }
+
+  @media (width < 750px) {
+    .container-logo-certificartion {
+      display: flex;
+      justify-content: center;
+    }
+  }
+</style>

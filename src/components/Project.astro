@@ -1,0 +1,162 @@
+---
+interface Props {
+  slug: string;
+  titulo: string;
+  imagen: string;
+  resumen: string;
+  linkCode: string;
+  linkPreview: string;
+}
+
+const { slug, titulo, imagen, resumen, linkCode, linkPreview } = Astro.props;
+
+const baseUrl = import.meta.env.SITE;
+
+const url = resumen ? `projects/${slug}` : baseUrl;
+
+const maxWidth = resumen ? "300px" : "400px";
+---
+
+<article class="group-project justify-content">
+  <div class="img-project">
+    <img id="project-image" src={imagen} alt={titulo} transition:name={`projects-${slug}`} />
+  </div>
+  <div class="text-project">
+    <h4>{titulo}</h4>
+    {resumen && <p set:html={resumen} />}
+    <slot />
+    <div class="know-more-container">
+      <a href={url} class="know-more" target="_self">
+        {resumen ? "Saber más" : "Ir al portafolio"}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M9 6l6 6l-6 6"></path>
+        </svg>
+      </a>
+    </div>
+
+    <div class="button-container">
+      <a
+        id="profile-link"
+        href={linkCode}
+        target="_blank"
+        class="button contrast-button button-action"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+          ></path>
+        </svg>
+        Code
+      </a>
+      <a
+        href={linkPreview}
+        target="_blank"
+        class="button contrast-button button-action"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+          ></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+          ></path>
+        </svg>
+        Preview
+      </a>
+    </div>
+  </div>
+</article>
+
+<style define:vars={{ maxWidth }}>
+  .group-project {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .img-project {
+    max-width: var(--maxWidth);
+  }
+
+  .img-project img {
+    width: 100%;
+    border-radius: 15px;
+    border: solid var(--white-100) 3px;
+  }
+
+  .text-project {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 448px;
+    min-width: 300px;
+    width: 100%;
+  }
+
+  .button-container {
+    display: flex;
+  }
+
+  .button-action {
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin-right: 15px;
+  }
+
+  p {
+    margin: 15px 0;
+  }
+
+  .know-more-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .know-more-container .know-more {
+    margin-right: 0px;
+  }
+
+  @media (width < 750px) {
+  .group-project{
+    justify-content: center;
+  }
+</style>
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const buttonBack = document.querySelector(".know-more");
+    const projectImage = document.querySelector("#project-image");
+    buttonBack.addEventListener("click", () => {
+      projectImage.setAttribute("data-astro-transition-scope", "");
+    });
+  });
+</script>

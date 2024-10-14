@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import localPhoto from "../images/foto320x489.webp";
+---
+
+<section id="about">
+  <h3>
+    <svg
+      class="size-8"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+      <path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path>
+      <path d="M15 19l2 2l4 -4"></path>
+    </svg>
+    Sobre mi
+  </h3>
+  <div class="container-about">
+    <div class="description-about">
+      <p>
+        Con más de diez años laborando en empresas del rubro de la tecnología,
+        donde he crecido profesionalmente pasando por áreas de <span
+          class="text-yellow"
+          >desarrollo de software
+        </span> llegando a la <span class="text-yellow"
+          >gestión de proyectos</span
+        >, en esta última área he abordado desde la concepción y <span
+          class="text-yellow"
+          >planificación hasta la ejecución y entrega final.</span
+        >
+      </p>
+      <p>
+        Me enfoco en manejar la <span class="text-yellow"
+          >coordinación de equipos</span
+        >, establecimiento de metas claras, asignación de recursos, seguimiento
+        del progreso y resolución de problemas, lo que me permite garantizar el
+        cumplimiento de plazos y objetivos.
+      </p>
+    </div>
+    <div>
+      <Image
+        class="foto-about"
+        src={localPhoto}
+        alt="Foto de José Alexander Polanco Méndez"
+      />
+    </div>
+  </div>
+</section>
+<style>
+  .container-about {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 30px 0;
+  }
+
+  .description-about {
+    display: flex;
+    flex-direction: column;
+    max-width: 614px;
+    min-width: 335px;
+    gap: 15px;
+  }
+
+  .foto-about {
+    width: 272px;
+    height: 272px;
+    background-color: var(--white-100);
+    border-radius: 15px;
+    transform: rotate(5deg);
+  }
+
+  @media (width < 945.6px) {
+    .container-about {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+</style>

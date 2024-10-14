@@ -1,0 +1,120 @@
+---
+interface Props {
+  email: string;
+}
+
+const { email } = Astro.props;
+---
+
+<nav id="navbar">
+  <a href="#experience">Experiencia</a>
+  <a href="#projects">Proyectos</a>
+  <a href="#about">Sobre mí</a>
+  <a href=`mailto:${email}`>Contacto</a>
+  <svg
+    id="light"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    stroke-width="2"
+    stroke="currentColor"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    style="scale: 1;"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+    <path
+      d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
+    ></path>
+  </svg>
+  <svg
+    id="dark"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    stroke-width="2"
+    stroke="currentColor"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    style="scale: 1;"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path
+      d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+    ></path>
+  </svg>
+</nav>
+<style>
+  @keyframes nav-shadown {
+    100% {
+      background-color: var(--gray-150);
+      box-shadow: -4px 10px 20px -10px var(--black-100);
+      backdrop-filter: blur(5px);
+    }
+  }
+  #navbar {
+    display: flex;
+    position: fixed;
+    top: 15px;
+    left: calc(50% - (375px / 2));
+    align-items: center;
+    justify-content: space-evenly;
+    width: 375px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    padding: 7px 10px;
+    border-radius: 20px;
+    z-index: 999;
+
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+
+    a:hover {
+      color: var(--yellow-500);
+    }
+
+    svg:hover {
+      cursor: pointer;
+      transform: scale(1.3);
+    }
+  }
+
+  #navbar * {
+    transition: transform 0.1s linear;
+  }
+</style>
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const root = document.querySelector(":root");
+    const buttonLight = document.querySelector("#light");
+    const buttonDark = document.querySelector("#dark");
+    const darkModePreference = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+
+    function changeScheme() {
+      if (
+        (darkModePreference.matches && root.className === "") ||
+        root.className === "dark"
+      ) {
+        root.className = "light";
+        window.localStorage.setItem("theme", "light");
+      } else {
+        root.className = "dark";
+        window.localStorage.setItem("theme", "dark");
+      }
+    }
+
+    if (buttonLight) {
+      buttonLight.addEventListener("click", changeScheme);
+    }
+    if (buttonDark) {
+      buttonDark.addEventListener("click", changeScheme);
+    }
+  });
+</script>

@@ -1,0 +1,78 @@
+---
+interface Props {
+  urlLinkedin: string;
+}
+
+const { urlLinkedin } = Astro.props;
+---
+
+<section id="experience">
+  <div class="container-title">
+    <svg
+      class="size-8"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path
+        d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"
+      ></path>
+      <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path>
+      <path d="M12 12l0 .01"></path>
+      <path d="M3 13a20 20 0 0 0 18 0"></path>
+    </svg>
+    <h3>Experiencia laboral</h3>
+  </div>
+  <div class="container-experiencies">
+    <span class="bar"></span>
+    <div class="group-experiencies">
+      <slot />
+      <a href={urlLinkedin} class="know-more" target="_blank"
+        >Saber más <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M9 6l6 6l-6 6"></path>
+        </svg></a
+      >
+    </div>
+  </div>
+</section>
+<style>
+  #experience {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .container-experiencies {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 0;
+  }
+
+  .bar {
+    position: relative;
+    border: 0.5px solid var(--gray-gray-200);
+    left: 15px;
+  }
+
+  .group-experiencies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+</style>

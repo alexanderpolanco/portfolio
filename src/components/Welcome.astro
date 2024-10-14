@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+import localPhoto from "../images/foto320x489.webp";
+
+interface Props {
+  urlLinkedin: string;
+  email: string;
+}
+
+const { urlLinkedin, email } = Astro.props;
+---
+
+<section id="welcome-section">
+  <div id="messaje-welcome">
+    <Image class="image" src={localPhoto} alt="" />
+    <a href={urlLinkedin} target="_blank" class="button featured-button"
+      >Disponible para trabajar</a
+    >
+  </div>
+  <h1>Hey, soy Alexander</h1>
+  <p>
+    +10 años de experiencia en el rubro de sistemas. <strong
+      >Técnico superior en informática</strong
+    >
+    de Santiago, Chile CL. Especializado en el desarrollo de aplicaciones web.
+  </p>
+  <div id="buttons-contact">
+    <a href=`mailto:${email}` class="button contrast-button">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path
+          d="M12 18h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5"
+        ></path>
+        <path d="M3 6l9 6l9 -6"></path>
+        <path d="M15 18h6"></path>
+        <path d="M18 15l3 3l-3 3"></path>
+      </svg>
+      Contáctame
+    </a>
+    <a href={urlLinkedin} target="_blank" class="button contrast-button">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path
+          d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+        ></path>
+        <path d="M8 11l0 5"></path>
+        <path d="M8 8l0 .01"></path>
+        <path d="M12 16l0 -5"></path>
+        <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+      </svg>
+      Linkedin
+    </a>
+  </div>
+</section>
+<style>
+  #welcome-section {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      max-width: 572px;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      color: var(--white-gray-500);
+      margin: 1.5rem 0;
+
+      strong {
+        color: var(--yellow-500);
+      }
+    }
+  }
+  #messaje-welcome {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 15px;
+  }
+
+  .image {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    background-color: var(--white-100);
+  }
+
+  #buttons-contact {
+    display: flex;
+    gap: 10px;
+  }
+</style>

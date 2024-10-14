@@ -1,0 +1,73 @@
+---
+interface Props {
+  urlLinkedin: string;
+}
+
+const { urlLinkedin } = Astro.props;
+---
+
+<section id="certifications">
+  <div class="container-title">
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 256 256"
+      stroke-width="0"
+      stroke="currentColor"
+      fill="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path
+        d="M20.2 10.8c-3.5 1.2-6 3-7.6 5.5-2.8 4.6-2.7-1.3-2.6 90.5l.1 83.8 1.2 2.5c1.7 3.7 3.3 5.3 6.8 7l3.1 1.5h66l2.6-1.2c5.4-2.5 8.5-7.4 8.5-13.3 0-6-2.8-10.5-8-13l-3.1-1.5-23.9-.1-23.9-.1V39.5h177.2l.1 16.5.1 16.5 1.5 3.1c2.5 5.2 7.1 7.9 13 8 6 0 10.8-3 13.3-8.5l1.2-2.6V46.8c0-25.5 0-25.6-1-27.8-1.7-3.7-3.6-5.7-7-7.3l-3.1-1.5-106.1-.1C27.7 10 22.5 10 20.2 10.8z"
+      ></path>
+      <path
+        d="M150.1 69.5c-9.2 1.2-17.9 4.6-25.7 9.8-4.4 3-12.6 11.1-15.6 15.6-14.3 21.4-13.5 48.4 2 68.7l2.5 3.2.1 34.1.1 34.1 1.2 2.5c1.7 3.7 3.3 5.3 6.8 7 2.6 1.3 3.6 1.5 6.6 1.5 6 0 7.2-.9 19.2-12.8l10.3-10.2 10.3 10.2c12 11.9 13.3 12.8 19.2 12.8 6 0 10.8-3.1 13.3-8.5l1.2-2.6.1-34.1.1-34 3-4c5.2-7 8.9-15.1 10.7-23.7 1.2-5.4 1.2-16.7.1-22.2-2.6-12.4-7.7-21.8-16.4-30.5S181 72.6 168.9 70.1c-4.4-.9-14.5-1.2-18.8-.6zm13.8 29.7c13.3 2.8 23.3 15.2 23.3 28.8 0 16.1-13.4 29.5-29.5 29.5s-29.5-13.4-29.5-29.5c0-10.9 6.5-21.5 16.2-26.3 6.3-3 12.7-3.9 19.5-2.5zm-13.4 87.3c6.4 1 10.3.8 20.2-1l1.7-.3V216.9l-7.4-7.4-7.4-7.4-7.4 7.4-7.4 7.4v-31.8l1.8.3c.9.3 3.6.7 5.9 1.1z"
+      ></path>
+    </svg>
+    <h3>Licencias y certificaciones</h3>
+  </div>
+  <div class="group-certifications">
+    <slot />
+    <div class="know-more-container">
+      <a href={urlLinkedin} class="know-more" target="_blank"
+        >Saber más <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M9 6l6 6l-6 6"></path>
+        </svg></a
+      >
+    </div>
+  </div>
+</section>
+<style>
+  .group-certifications {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px 0px;
+  }
+
+  .container-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .know-more-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+</style>
