@@ -9,7 +9,7 @@
   <p align="center">
     Portfolio
     <br />
-    <a href="https://alexanderpolanco.github.io/portfolio/" target="_blank"><strong>Ver »</strong></a>
+    <a href="https://portfolio-develop.pages.dev" target="_blank"><strong>Ver »</strong></a>
     <br />
   </p>
 </div>
@@ -18,7 +18,7 @@
 
 ## Acerca del proyecto
 
-[![Vista desktop][product-screenshot-desktop]](https://alexanderpolanco.github.io/portfolio/)
+[![Vista desktop][product-screenshot-desktop]](https://portfolio-develop.pages.dev)
 
 Este portfolio es una reimaginación de mi trabajo anterior, construido con el poderoso framework Astro JS. Opté por Astro debido a su enfoque en la performance, la simplicidad y la capacidad de crear sitios web estáticos altamente personalizables.
 
@@ -30,7 +30,7 @@ Este portfolio es una reimaginación de mi trabajo anterior, construido con el p
 - **Personalización avanzada:** Gracias a las capacidades de Astro, pude crear transiciones de vista suaves y personalizadas, mejorando la interacción del usuario.
 
 <p align="center">
-<a href="https://alexanderpolanco.github.io/portfolio/" target="_blank"><img src="./public/images/shots_movil_so.webp"/></a>
+<a href="https://portfolio-develop.pages.dev" target="_blank"><img src="./public/images/shots_movil_so.webp"/></a>
 </p>
 
 ### Desarrollo
