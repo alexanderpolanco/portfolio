@@ -4,7 +4,7 @@ titulo: "AluraFlix - Challenge ONE"
 imagen: "banner-aluraflix.webp"
 resumen: "En este proyecto final se puso a prueba los conocimientos adquiridos en <a class='text-yellow' href='https://www.aluracursos.com/' target='_blank'>Alura Latam</a> y <a class='text-yellow' href='https://www.oracle.com/cl/education/oracle-next-education/' target='_blank'>Oracle Next Education.</a> Se construyó un proyecto llamado AluraFlix, con el objetivo de crear un sitio web similar a las plataformas de streaming actuales, donde los usuarios pudieran explorar una variedad de videos de Alura organizados en categorías."
 metaDescripcion: "En este proyecto final se puso a prueba los conocimientos adquiridos en Alura Latam y Oracle Next Education. Se construyó un proyecto llamado AluraFlix, con el objetivo de crear un sitio web similar a las plataformas de streaming actuales, donde los usuarios pudieran explorar una variedad de videos de Alura organizados en categorías."
-linkCode: "https://github.com/alexanderpold/challenge-one-aluraflix"
+linkCode: "https://github.com/alexanderpolanco/challenge-one-aluraflix"
 linkPreview: "https://challenge-one-aluraflix.pages.dev/"
 ---
 

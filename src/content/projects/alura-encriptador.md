@@ -5,7 +5,7 @@ imagen: "banner-encriptador.webp"
 resumen: "Este proyecto, parte del challenge G6 ONE, presenta un encriptador de texto simple. Su objetivo principal es permitir a los usuarios ingresar un texto y obtener una versión cifrada del mismo."
 metaDescripcion: "Este proyecto, parte del challenge G6 ONE, presenta un encriptador de texto simple. Su objetivo principal es permitir a los usuarios ingresar un texto y obtener una versión cifrada del mismo."
 linkCode: "https://github.com/alexanderpolanco/challenge-one-encriptador"
-linkPreview: "https://alexanderpolanco.github.io/chanllage-one-encriptador/"
+linkPreview: "https://alexanderpolanco.github.io/challenge-one-encriptador"
 ---
 
 Este proyecto, parte del challenge G6 ONE, presenta un encriptador de texto simple. Su objetivo principal es permitir a los usuarios ingresar un texto y obtener una versión cifrada del mismo.
